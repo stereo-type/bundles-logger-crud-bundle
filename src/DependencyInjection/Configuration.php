@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @copyright  2024 Zhalayletdinov Vyacheslav evil_tut@mail.ru
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+declare(strict_types=1);
+
+namespace LoggerCrudBundle\DependencyInjection;
+
+use Symfony\Component\Config\Definition\Builder\TreeBuilder;
+use Symfony\Component\Config\Definition\ConfigurationInterface;
+
+class Configuration implements ConfigurationInterface
+{
+    public function getConfigTreeBuilder(): TreeBuilder
+    {
+        $treeBuilder = new TreeBuilder('logger_crud_bundle');
+        $rootNode = $treeBuilder->getRootNode();
+
+        $rootNode
+            ->children()
+            ->scalarNode('default_role')
+            ->defaultValue('ROLE_USER')
+            ->end();
+
+        return $treeBuilder;
+    }
+}
