@@ -1,6 +1,6 @@
 doctrine_migrations:
   migrations_paths:
-    'LoggerCrudBundle\Infrastructure\Persistence\Migrations': '%kernel.project_dir%/src/Infrastructure/Persistence/Migrations'
+    'AcademCity\LoggerCrudBundle\Infrastructure\Persistence\Migrations': '%kernel.project_dir%/src/Infrastructure/Persistence/Migrations'
   storage:
     table_storage:
       table_name: 'doctrine_migration_versions'

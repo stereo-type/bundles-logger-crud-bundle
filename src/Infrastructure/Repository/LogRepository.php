@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace LoggerCrudBundle\Infrastructure\Repository;
+namespace AcademCity\LoggerCrudBundle\Infrastructure\Repository;
 
-use LoggerCrudBundle\Domain\Entity\Log;
-use LoggerCrudBundle\Domain\Repository\LogRepositoryInterface;
+use AcademCity\LoggerCrudBundle\Domain\Entity\Log;
+use AcademCity\LoggerCrudBundle\Domain\Repository\LogRepositoryInterface;
 use Doctrine\ORM\EntityManagerInterface;
 
 readonly class LogRepository implements LogRepositoryInterface

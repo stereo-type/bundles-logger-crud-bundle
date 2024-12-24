@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace LoggerCrudBundle;
+namespace AcademCity\LoggerCrudBundle;
 
-use LoggerCrudBundle\DependencyInjection\LoggerCrudExtension;
+use AcademCity\LoggerCrudBundle\DependencyInjection\LoggerCrudExtension;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class LoggerCrudBundle extends Bundle
+class AcademCityLoggerCrudBundle extends Bundle
 {
     public function getContainerExtension(): ?ExtensionInterface
     {

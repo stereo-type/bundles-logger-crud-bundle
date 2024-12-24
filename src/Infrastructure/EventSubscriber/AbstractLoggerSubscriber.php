@@ -7,7 +7,7 @@ declare(strict_types=1);
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace LoggerCrudBundle\Infrastructure\EventSubscriber;
+namespace AcademCity\LoggerCrudBundle\Infrastructure\EventSubscriber;
 
 use BackedEnum;
 use Monolog\Attribute\WithMonologChannel;

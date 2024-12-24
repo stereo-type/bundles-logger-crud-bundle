@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace LoggerCrudBundle\DependencyInjection;
+namespace AcademCity\LoggerCrudBundle\DependencyInjection;
 
 use Exception;
 use Symfony\Component\Config\FileLocator;

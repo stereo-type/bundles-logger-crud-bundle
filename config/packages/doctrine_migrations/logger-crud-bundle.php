@@ -8,6 +8,6 @@
 declare(strict_types=1);
 
 return [
-    'LoggerCrudBundle\Infrastructure\Persistence\Migrations' =>
+    'AcademCity\LoggerCrudBundle\Infrastructure\Persistence\Migrations' =>
         '%kernel.project_dir%/vendor/academcity/logger-crud-bundle/src/Infrastructure/Persistence/Migrations',
 ];

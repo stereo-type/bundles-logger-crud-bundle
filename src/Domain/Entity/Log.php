@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LoggerCrudBundle\Domain\Entity;
+namespace AcademCity\LoggerCrudBundle\Domain\Entity;
 
 use AcademCity\CoreBundle\Domain\Entity\Traits\HasModifier;
 use AcademCity\CoreBundle\Domain\Entity\Traits\HasTimestamps;

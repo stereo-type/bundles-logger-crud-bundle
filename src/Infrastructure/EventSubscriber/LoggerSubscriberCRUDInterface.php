@@ -7,7 +7,7 @@
  */
 declare(strict_types=1);
 
-namespace LoggerCrudBundle\Infrastructure\EventSubscriber;
+namespace AcademCity\LoggerCrudBundle\Infrastructure\EventSubscriber;
 
 interface LoggerSubscriberCRUDInterface
 {

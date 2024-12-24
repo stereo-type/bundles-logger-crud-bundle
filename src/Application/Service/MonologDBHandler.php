@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LoggerCrudBundle\Application\Service;
+namespace AcademCity\LoggerCrudBundle\Application\Service;
 
-use LoggerCrudBundle\Domain\Entity\Log;
+use AcademCity\LoggerCrudBundle\Domain\Entity\Log;
 use Doctrine\ORM\EntityManagerInterface;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\LogRecord;

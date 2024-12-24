@@ -7,9 +7,9 @@ declare(strict_types=1);
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace LoggerCrudBundle\Infrastructure\EventSubscriber;
+namespace AcademCity\LoggerCrudBundle\Infrastructure\EventSubscriber;
 
-use LoggerCrudBundle\Application\Service\MonologDBHandler;
+use AcademCity\LoggerCrudBundle\Application\Service\MonologDBHandler;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\TerminateEvent;
 

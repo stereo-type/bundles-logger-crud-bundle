@@ -4,7 +4,7 @@ security:
     users_in_memory: { memory: null }
     app_user_provider:
       entity:
-        class: LoggerCrudBundle\Domain\Entity\UserStub
+        class: AcademCity\LoggerCrudBundle\Domain\Entity\UserStub
         property: username
   firewalls:
     dev:

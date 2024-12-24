@@ -55,12 +55,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "LoggerCrudBundle\\": "src/"
+      "AcademCity\\LoggerCrudBundle\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "LoggerCrudBundle\\Tests\\": "tests/"
+      "AcademCity\\LoggerCrudBundle\\Tests\\": "tests/"
     }
   },
   "extra": {

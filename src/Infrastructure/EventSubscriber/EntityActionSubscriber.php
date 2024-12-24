@@ -7,10 +7,10 @@ declare(strict_types=1);
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace LoggerCrudBundle\Infrastructure\EventSubscriber;
+namespace AcademCity\LoggerCrudBundle\Infrastructure\EventSubscriber;
 
-use LoggerCrudBundle\Application\Enum\EntityAction;
-use LoggerCrudBundle\Domain\Entity\Log;
+use AcademCity\LoggerCrudBundle\Application\Enum\EntityAction;
+use AcademCity\LoggerCrudBundle\Domain\Entity\Log;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Doctrine\ORM\Events;

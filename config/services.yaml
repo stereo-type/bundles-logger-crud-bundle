@@ -3,7 +3,7 @@ services:
   _defaults:
     autowire: true
     autoconfigure: true
-  LoggerCrudBundle\:
+  AcademCity\LoggerCrudBundle\:
     resource: '../src/*'
     exclude: '../src/{DependencyInjection,Tests,Kernel.php}'
     tags: [ 'service' ]
