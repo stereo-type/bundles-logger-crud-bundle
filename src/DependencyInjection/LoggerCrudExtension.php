@@ -39,19 +39,11 @@ class LoggerCrudExtension extends Extension
         $this->projectRoot = $container->getParameter('kernel.project_dir');
 
         $this->addDoctrineMappings($container);
-        $this->addDoctrineMigrations($container);
     }
 
     private function addDoctrineMappings(ContainerBuilder $container): void
     {
         $subDir = "/config/packages/doctrine";
-        $filename = "logger_crud_bundle.php";
-        $this->createConfigsFile($subDir, $filename);
-    }
-
-    private function addDoctrineMigrations(ContainerBuilder $container): void
-    {
-        $subDir = "/config/packages/doctrine_migrations";
         $filename = "logger_crud_bundle.php";
         $this->createConfigsFile($subDir, $filename);
     }
