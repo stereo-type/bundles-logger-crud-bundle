@@ -45,14 +45,14 @@ class LoggerCrudExtension extends Extension
     private function addDoctrineMappings(ContainerBuilder $container): void
     {
         $subDir = "/config/packages/doctrine";
-        $filename = "role_model_bundle.php";
+        $filename = "logger_crud_bundle";
         $this->createConfigsFile($subDir, $filename);
     }
 
     private function addDoctrineMigrations(ContainerBuilder $container): void
     {
         $subDir = "/config/packages/doctrine_migrations";
-        $filename = "role_model_bundle.php";
+        $filename = "logger_crud_bundle";
         $this->createConfigsFile($subDir, $filename);
     }
 
