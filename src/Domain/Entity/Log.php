@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace LoggerCrudBundle\Domain\Entity;
 
-use CoreBundle\Domain\Entity\Traits\HasModifier;
-use CoreBundle\Domain\Entity\Traits\HasTimestamps;
+use AcademCity\CoreBundle\Domain\Entity\Traits\HasModifier;
+use AcademCity\CoreBundle\Domain\Entity\Traits\HasTimestamps;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Monolog\Level;
 
 #[ORM\Entity]
+#[ORM\Table(name: 'logger_crud_bundle_logs')]
 #[ORM\HasLifecycleCallbacks]
 class Log
 {

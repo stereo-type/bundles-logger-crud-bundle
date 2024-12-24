@@ -11,23 +11,24 @@ use Symfony\Component\Security\Core\User\UserInterface;
 #[ORM\HasLifecycleCallbacks]
 class UserStub implements UserInterface
 {
-
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
     private int $id;
 
-    public function getRoles():array
+    public function getRoles(): array
     {
         return [];
     }
 
 
-    public function eraseCredentials(): void {
+    public function eraseCredentials(): void
+    {
     }
 
-    public function getUserIdentifier(): string {
-        return (string) $this->id;
+    public function getUserIdentifier(): string
+    {
+        return (string)$this->id;
     }
 
 }

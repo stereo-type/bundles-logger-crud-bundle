@@ -16,13 +16,13 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder('logger_crud_bundle');
-        $rootNode = $treeBuilder->getRootNode();
-
-        $rootNode
-            ->children()
-            ->scalarNode('default_role')
-            ->defaultValue('ROLE_USER')
-            ->end();
+//        $rootNode = $treeBuilder->getRootNode();
+//
+//        $rootNode
+//            ->children()
+//            ->scalarNode('default_role')
+//            ->defaultValue('ROLE_USER')
+//            ->end();
 
         return $treeBuilder;
     }
