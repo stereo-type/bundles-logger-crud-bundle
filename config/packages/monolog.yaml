@@ -1,12 +1,12 @@
 monolog:
   channels:
     - deprecation # Deprecations are logged in the dedicated "deprecation" channel when it exists
-    - db
+    - logger_crud
   handlers:
-    db:
-      channels: [ 'db' ]
+    logger_crud_bundle:
+      channels: [ 'logger_crud' ]
       type: service
-      id: monolog.db_handler
+      id: monolog.logger_crud_bundle_handler
       level: debug
 
 when@dev:

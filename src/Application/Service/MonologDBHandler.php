@@ -32,11 +32,14 @@ class MonologDBHandler extends AbstractProcessingHandler
 
     public function saveLogs(): void
     {
-        if (!empty($this->buffer)) {
-            foreach ($this->buffer as $logEntry) {
-                $this->em->persist($logEntry);
+        /**TODO придумать что  делать при 500, при этом EntityManager закрывается и его нельзя перезапустить*/
+        if ($this->em->isOpen()) {
+            if (!empty($this->buffer)) {
+                foreach ($this->buffer as $logEntry) {
+                    $this->em->persist($logEntry);
+                }
+                $this->em->flush();
             }
-            $this->em->flush();
         }
     }
 }

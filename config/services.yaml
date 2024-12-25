@@ -8,21 +8,21 @@ services:
     exclude: '../src/{DependencyInjection,Tests,Kernel.php}'
     tags: [ 'service' ]
     bind:
-      Psr\Log\LoggerInterface: '@monolog.logger.db'
+      Psr\Log\LoggerInterface: '@monolog.logger'
 
-  monolog.db_handler:
+  monolog.logger_crud_bundle_handler:
     class: AcademCity\LoggerCrudBundle\Application\Service\MonologDBHandler
-    arguments: [ '@doctrine.orm.entity_manager',  '@security.helper' ]
+#    arguments: [ '@doctrine.orm.entity_manager',  '@security.helper' ]
 
   monolog.processor.request:
     class: AcademCity\LoggerCrudBundle\Application\Service\RequestProcessor
     arguments: [ '@request_stack', '@service_container' ]
     tags:
-      - { name: monolog.processor, method: processRecord, handler: db }
+      - { name: monolog.processor, method: processRecord, handler: logger_crud_bundle }
 
   monolog.db_log_saver:
     class: AcademCity\LoggerCrudBundle\Infrastructure\EventSubscriber\LogSaveSubscriber
-    arguments: [ '@monolog.db_handler' ]
+    arguments: [ '@monolog.logger_crud_bundle_handler' ]
     tags:
       - { name: kernel.event_subscriber }
 
@@ -33,10 +33,9 @@ services:
   app.subscriber.entity_subscriber:
     class: AcademCity\LoggerCrudBundle\Infrastructure\EventSubscriber\EntityActionSubscriber
     parent: app.subscriber.abstract_subscriber
-    #  TODO разобраться почему не работает так, потратил много времени, не понял почему, в ЛК автора работает именно так
-    #    tags:
-    #      - { name: doctrine.event_subscriber }
     tags:
+    #  TODO разобраться почему не работает так, потратил много времени, не понял почему, в ЛК автора работает именно так
+    #  - { name: doctrine.event_subscriber }
       - { name: doctrine.event_listener, event: 'postPersist' }
       - { name: doctrine.event_listener, event: 'preUpdate' }
       - { name: doctrine.event_listener, event: 'preRemove' }

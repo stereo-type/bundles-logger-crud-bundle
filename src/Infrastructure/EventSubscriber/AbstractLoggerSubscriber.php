@@ -16,7 +16,7 @@ use ReflectionClass;
 use Symfony\Bundle\SecurityBundle\Security;
 use Throwable;
 
-#[WithMonologChannel('db')]
+#[WithMonologChannel('logger_crud')]
 abstract class AbstractLoggerSubscriber implements LoggerSubscriberCRUDInterface
 {
     public const EVENT_TYPE = 'event';

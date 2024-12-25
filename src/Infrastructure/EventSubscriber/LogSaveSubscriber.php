@@ -11,7 +11,10 @@ namespace AcademCity\LoggerCrudBundle\Infrastructure\EventSubscriber;
 
 use AcademCity\LoggerCrudBundle\Application\Service\MonologDBHandler;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\HttpKernel\Event\ExceptionEvent;
+use Symfony\Component\HttpKernel\Event\FinishRequestEvent;
 use Symfony\Component\HttpKernel\Event\TerminateEvent;
+use Throwable;
 
 class LogSaveSubscriber implements EventSubscriberInterface
 {
@@ -31,20 +34,21 @@ class LogSaveSubscriber implements EventSubscriberInterface
         ];
     }
 
-    /**Почему-то не вызывается*/
     public function onKernelTerminate(TerminateEvent $event): void
     {
-        $this->dbHandler->saveLogs();
+        try {
+            $this->dbHandler->saveLogs();
+        } catch (Throwable) {
+        }
     }
 
-    //    public function onKernelException(ExceptionEvent $event): void
-    //    {
-    //        $this->dbHandler->saveLogs();
-    //    }
-    //
-    //    public function onKernelFinishRequest(FinishRequestEvent $event): void
-    //    {
-    //        $this->dbHandler->saveLogs();
-    //    }
+    //        public function onKernelException(ExceptionEvent $event): void
+    //        {
+    //            $this->dbHandler->saveLogs();
+    //        }
+    //        public function onKernelFinishRequest(FinishRequestEvent $event): void
+    //        {
+    //            $this->dbHandler->saveLogs();
+    //        }
 
 }
