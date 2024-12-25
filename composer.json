@@ -1,6 +1,6 @@
 {
   "name": "academcity/logger-crud-bundle",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "type": "symfony-bundle",
   "minimum-stability": "stable",
   "stability": "stable",
@@ -31,7 +31,8 @@
     "symfony/yaml": "^7.1",
     "symfony/dotenv": "^7.1",
     "symfony/monolog-bundle": "^3.10",
-    "symfony/flex": "^2.4"
+    "symfony/flex": "^2.4",
+    "doctrine/doctrine-bundle": "^2.13"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
