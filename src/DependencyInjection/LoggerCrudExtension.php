@@ -32,11 +32,11 @@ class LoggerCrudExtension extends Extension
         $configuration = new Configuration();
         $this->processConfiguration($configuration, $configs);
 
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../../config'));
         $loader->load('services.yaml');
 
         if ($container->hasExtension('monolog')) {
-            $loaderPackages = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config/packages'));
+            $loaderPackages = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../../config/packages'));
             $loaderPackages->load('monolog.yaml');
         }
 
