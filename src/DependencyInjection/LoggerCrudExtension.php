@@ -35,6 +35,9 @@ class LoggerCrudExtension extends Extension
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../../config'));
         $loader->load('services.yaml');
 
+        $loaderPackages = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../../config/packages'));
+        $loaderPackages->load('monolog.yaml');
+
         $this->filesystem = new Filesystem();
         $this->projectRoot = $container->getParameter('kernel.project_dir');
 
