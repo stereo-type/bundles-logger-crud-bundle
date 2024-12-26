@@ -1,6 +1,6 @@
 {
   "name": "academcity/logger-crud-bundle",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "type": "symfony-bundle",
   "minimum-stability": "stable",
   "stability": "stable",
@@ -51,7 +51,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://gitlab.dev-u.ru/bundles/core_bundle.git"
+      "url": "https://oauth2:JRB8vueyHk5JnBfUjNsb@gitlab.dev-u.ru/bundles/core_bundle.git"
     }
   ],
   "autoload": {
