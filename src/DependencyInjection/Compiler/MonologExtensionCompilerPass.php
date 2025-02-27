@@ -31,10 +31,11 @@ final class MonologExtensionCompilerPass implements CompilerPassInterface
                 ],
             ]);
 
-            // Создаём сам сервис хендлера для устранния проблемы с очередностью загрузки
-            $definition = new Definition(MonologDBHandler::class);
-            $definition->addTag('monolog.logger', ['channel' => 'logger_crud']);
-            $container->setDefinition('monolog.handler.logger_crud_bundle', $definition);
+            /**Не работает так. необзодимо в родительском конфиге прописать хендлер (в README описан)*/
+//            // Создаём сам сервис хендлера для устранния проблемы с очередностью загрузки
+//            $definition = new Definition(MonologDBHandler::class);
+//            $definition->addTag('monolog.logger', ['channel' => 'logger_crud']);
+//            $container->setDefinition('monolog.handler.logger_crud_bundle', $definition);
 
         } else {
             throw new LogicException('The monolog.logger service must have been configured.');

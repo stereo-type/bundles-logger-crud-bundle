@@ -23,6 +23,19 @@
   ]
   ```
 - выполнить команду `composer require academcity/core-bundle academcity/logger-crud-bundle`
+- в конфиге проекта в `config/packages/monolog.yaml`
+прописать
+```
+monolog:
+    channels:
+        - logger_crud
+    handlers:
+      logger_crud_bundle:
+        channels: [ 'logger_crud' ]
+        type: service
+        id: monolog.logger_crud_bundle_handler
+        level: debug
+```
 - после выполнения отчистить кеши `php bin/console cache:clear`
 - в основном проекте появится конфиг и из бандла `core_bundle` в котором необходимо указать класс сущности пользователя, имплиментирующую интрфейс `UserInterface`
 - сгенерировать миграцию, будет создана миграция для сущности `AcademCity\LoggerCrudBundle\Domain\Entity\Log` с ключами для связки с пользователем указанным в конфиге
