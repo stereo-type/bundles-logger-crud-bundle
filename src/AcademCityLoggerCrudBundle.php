@@ -17,11 +17,10 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class AcademCityLoggerCrudBundle extends Bundle
 {
-
     public function build(ContainerBuilder $container): void
     {
         parent::build($container);
-        $container->addCompilerPass(new MonologExtensionCompilerPass(),PassConfig::TYPE_BEFORE_OPTIMIZATION, 100);
+        $container->addCompilerPass(new MonologExtensionCompilerPass(), PassConfig::TYPE_BEFORE_OPTIMIZATION, 100);
     }
 
     public function getContainerExtension(): ?ExtensionInterface
