@@ -1,5 +1,0 @@
-when@dev:
-  maker:
-    root_namespace: 'AcademCity\LoggerCrudBundle\Domain'
-    generate_final_classes: true
-    generate_final_entities: false

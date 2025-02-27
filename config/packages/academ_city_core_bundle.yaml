@@ -1,3 +1,0 @@
-academ_city_core_bundle:
-  # Указать класс сущности пользователя имплементирующей UserInterface
-  user_class: App\Entity\User

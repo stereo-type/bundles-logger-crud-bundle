@@ -1,18 +1,15 @@
-# config/services.yaml
 services:
   _defaults:
     autowire: true
     autoconfigure: true
+
   AcademCity\LoggerCrudBundle\:
-    resource: '../src/*'
-    exclude: '../src/{DependencyInjection,Tests,Kernel.php}'
-    tags: [ 'service' ]
-    bind:
-      Psr\Log\LoggerInterface: '@monolog.logger'
+    resource: '../../*'
+    exclude: '../../{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
 
   monolog.logger_crud_bundle_handler:
     class: AcademCity\LoggerCrudBundle\Application\Service\MonologDBHandler
-#    arguments: [ '@doctrine.orm.entity_manager',  '@security.helper' ]
+    #    arguments: [ '@doctrine.orm.entity_manager',  '@security.helper' ]
 
   monolog.processor.request:
     class: AcademCity\LoggerCrudBundle\Application\Service\RequestProcessor
@@ -34,9 +31,8 @@ services:
     class: AcademCity\LoggerCrudBundle\Infrastructure\EventSubscriber\EntityActionSubscriber
     parent: app.subscriber.abstract_subscriber
     tags:
-    #  TODO разобраться почему не работает так, потратил много времени, не понял почему, в ЛК автора работает именно так
-    #  - { name: doctrine.event_subscriber }
+        #  TODO разобраться почему не работает так, потратил много времени, не понял почему, в ЛК автора работает именно так
+      #  - { name: doctrine.event_subscriber }
       - { name: doctrine.event_listener, event: 'postPersist' }
       - { name: doctrine.event_listener, event: 'preUpdate' }
       - { name: doctrine.event_listener, event: 'preRemove' }
-

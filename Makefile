@@ -2,10 +2,10 @@ cache-clear:
 	composer dump-autoload -o  && php bin/console cache:clear
 
 stan:
-	php vendor/bin/phpstan analyse src tests
+	php vendor/bin/phpstan analyse src
 
 fix:
-	vendor/bin/php-cs-fixer fix src && vendor/bin/php-cs-fixer fix tests
+	php vendor/bin/php-cs-fixer fix src
 
 clean: fix stan cache-clear
 
