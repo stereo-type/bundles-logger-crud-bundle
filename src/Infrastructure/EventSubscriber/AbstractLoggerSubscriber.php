@@ -14,6 +14,7 @@ use Monolog\Attribute\WithMonologChannel;
 use Psr\Log\LoggerInterface;
 use ReflectionClass;
 use Symfony\Bundle\SecurityBundle\Security;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Throwable;
 
 #[WithMonologChannel('logger_crud')]
@@ -23,8 +24,11 @@ abstract class AbstractLoggerSubscriber implements LoggerSubscriberCRUDInterface
     public const EVENT_TYPE_ERROR = 'event_error';
 
 
-    public function __construct(public readonly LoggerInterface $dbLogger, public readonly Security $security)
-    {
+    public function __construct(
+        protected readonly LoggerInterface $dbLogger,
+        protected readonly Security $security,
+        protected readonly ParameterBagInterface $parameterBag
+    ) {
     }
 
     protected function logEvent(string $message, string $eventType, BackedEnum $eventAction, array $eventFields = []): void

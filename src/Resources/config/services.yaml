@@ -25,13 +25,13 @@ services:
 
   app.subscriber.abstract_subscriber:
     class: AcademCity\LoggerCrudBundle\Infrastructure\EventSubscriber\AbstractLoggerSubscriber
-    arguments: [ '@logger', '@security.helper' ]
+    arguments: [ '@logger', '@security.helper', '@parameter_bag' ]
 
   app.subscriber.entity_subscriber:
     class: AcademCity\LoggerCrudBundle\Infrastructure\EventSubscriber\EntityActionSubscriber
     parent: app.subscriber.abstract_subscriber
     tags:
-        #  TODO разобраться почему не работает так, потратил много времени, не понял почему, в ЛК автора работает именно так
+      #  TODO разобраться почему не работает так, потратил много времени, не понял почему, в ЛК автора работает именно так
       #  - { name: doctrine.event_subscriber }
       - { name: doctrine.event_listener, event: 'postPersist' }
       - { name: doctrine.event_listener, event: 'preUpdate' }

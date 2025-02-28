@@ -16,7 +16,10 @@ use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Doctrine\ORM\Events;
 use Doctrine\Persistence\Event\LifecycleEventArgs;
 use Doctrine\Persistence\ObjectManager;
+use Psr\Log\LoggerInterface;
 use ReflectionClass;
+use Symfony\Bundle\SecurityBundle\Security;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Throwable;
 
 class EntityActionSubscriber extends AbstractLoggerSubscriber implements EventSubscriber
@@ -24,6 +27,14 @@ class EntityActionSubscriber extends AbstractLoggerSubscriber implements EventSu
     public const EXCLUDED_ENTITY = [
         Log::class
     ];
+
+    private array $ignoreEntities;
+
+    public function __construct(LoggerInterface $dbLogger, Security $security, ParameterBagInterface $params)
+    {
+        parent::__construct($dbLogger, $security, $params);
+        $this->ignoreEntities = array_merge(self::EXCLUDED_ENTITY, $params->get('academ_city_logger_crud.ignore_entities'));
+    }
 
     /**
      * @return string[]
@@ -43,7 +54,7 @@ class EntityActionSubscriber extends AbstractLoggerSubscriber implements EventSu
      */
     private function needLog(LifecycleEventArgs $args): bool
     {
-        if (in_array(get_class($args->getObject()), self::EXCLUDED_ENTITY, true)) {
+        if (in_array(get_class($args->getObject()), $this->ignoreEntities, true)) {
             return false;
         }
         return true;
