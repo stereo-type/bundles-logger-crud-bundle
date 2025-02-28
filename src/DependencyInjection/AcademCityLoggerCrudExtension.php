@@ -28,7 +28,7 @@ class AcademCityLoggerCrudExtension extends Extension
 
         $configuration = new Configuration();
         $this->processConfiguration($configuration, $configs);
-        $container->setParameter('academ_city_logger_crud.ignore_entities', $config['ignore_entities'] ?? []);
+        $container->setParameter('academ_city_logger_crud.ignore_entities', $configs[0]['ignore_entities'] ?? []);
 
         $this->filesystem = new Filesystem();
         $this->projectRoot = $container->getParameter('kernel.project_dir');
