@@ -5,7 +5,7 @@ services:
 
   AcademCity\LoggerCrudBundle\:
     resource: '../../*'
-    exclude: '../../{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+    exclude: '../../{DependencyInjection,Entity,Migrations,Tests,Kernel.php,Resources/config/packages/doctrine/logger_crud_bundle.php}'
 
   monolog.logger_crud_bundle_handler:
     class: AcademCity\LoggerCrudBundle\Application\Service\MonologDBHandler
