@@ -13,6 +13,7 @@ enum EntityAction: string
 {
     case CREATED = 'created';
     case UPDATED = 'updated';
+    case MODIFIED = 'modified';
     case DELETED = 'removed';
     case RESTORED = 'restored';
 
@@ -24,8 +25,20 @@ enum EntityAction: string
         return match ($this) {
             self::CREATED => 'создал объект',
             self::UPDATED => 'обновил объект',
+            self::MODIFIED => 'изменил объект',
             self::DELETED => 'удалил объект',
             self::RESTORED => 'восстановил объект',
+        };
+    }
+
+    public function getUserActionShort(): string
+    {
+        return match ($this) {
+            self::CREATED => 'создал',
+            self::UPDATED => 'обновил',
+            self::MODIFIED => 'изменил',
+            self::DELETED => 'удалил',
+            self::RESTORED => 'восстановил',
         };
     }
 
