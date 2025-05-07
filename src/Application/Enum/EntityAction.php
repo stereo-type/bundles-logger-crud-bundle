@@ -42,4 +42,15 @@ enum EntityAction: string
         };
     }
 
+    public function getName(): string
+    {
+        return match ($this) {
+            self::CREATED => 'создание',
+            self::UPDATED => 'обновление',
+            self::MODIFIED => 'изменение',
+            self::DELETED => 'удаление',
+            self::RESTORED => 'восстановление',
+        };
+    }
+
 }
