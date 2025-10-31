@@ -1,6 +1,6 @@
 <?php
 
-namespace AcademCity\LoggerCrudBundle;
+namespace Slcorp\LoggerCrudBundle;
 
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\HttpKernel\Kernel as BaseKernel;

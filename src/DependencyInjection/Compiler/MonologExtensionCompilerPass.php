@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace AcademCity\LoggerCrudBundle\DependencyInjection\Compiler;
+namespace Slcorp\LoggerCrudBundle\DependencyInjection\Compiler;
 
-use AcademCity\LoggerCrudBundle\Application\Service\MonologDBHandler;
+use Slcorp\LoggerCrudBundle\Application\Service\MonologDBHandler;
 use LogicException;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -32,10 +32,10 @@ final class MonologExtensionCompilerPass implements CompilerPassInterface
             ]);
 
             /**Не работает так. необзодимо в родительском конфиге прописать хендлер (в README описан)*/
-//            // Создаём сам сервис хендлера для устранния проблемы с очередностью загрузки
-//            $definition = new Definition(MonologDBHandler::class);
-//            $definition->addTag('monolog.logger', ['channel' => 'logger_crud']);
-//            $container->setDefinition('monolog.handler.logger_crud_bundle', $definition);
+            //            // Создаём сам сервис хендлера для устранния проблемы с очередностью загрузки
+            //            $definition = new Definition(MonologDBHandler::class);
+            //            $definition->addTag('monolog.logger', ['channel' => 'logger_crud']);
+            //            $container->setDefinition('monolog.handler.logger_crud_bundle', $definition);
 
         } else {
             throw new LogicException('The monolog.logger service must have been configured.');

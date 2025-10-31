@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace AcademCity\LoggerCrudBundle\Application\Service;
+namespace Slcorp\LoggerCrudBundle\Application\Service;
 
 use Monolog\LogRecord;
 use Symfony\Component\HttpFoundation\RequestStack;

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace AcademCity\LoggerCrudBundle\Domain\Entity;
+namespace Slcorp\LoggerCrudBundle\Domain\Entity;
 
-use AcademCity\CoreBundle\Domain\Entity\Traits\HasModifier;
-use AcademCity\CoreBundle\Domain\Entity\Traits\HasTimestamps;
+use Slcorp\CoreBundle\Domain\Entity\Traits\HasModifier;
+use Slcorp\CoreBundle\Domain\Entity\Traits\HasTimestamps;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Monolog\Level;

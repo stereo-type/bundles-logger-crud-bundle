@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace AcademCity\LoggerCrudBundle\Application\Service;
+namespace Slcorp\LoggerCrudBundle\Application\Service;
 
-use AcademCity\LoggerCrudBundle\Domain\Entity\Log;
+use Slcorp\LoggerCrudBundle\Domain\Entity\Log;
 use Doctrine\ORM\EntityManagerInterface;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\LogRecord;
@@ -22,7 +22,8 @@ class MonologDBHandler extends AbstractProcessingHandler
     protected function write(LogRecord $record): void
     {
         $user = $this->security->getUser();
-        $logEntry = new Log($user);
+        $logEntry = new Log();
+        $logEntry->setUser($user);
         $logEntry->setMessage($record->message);
         $logEntry->setLevel($record->level);
         $logEntry->setExtra($record->extra);

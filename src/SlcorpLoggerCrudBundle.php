@@ -6,16 +6,16 @@
  */
 declare(strict_types=1);
 
-namespace AcademCity\LoggerCrudBundle;
+namespace Slcorp\LoggerCrudBundle;
 
-use AcademCity\LoggerCrudBundle\DependencyInjection\AcademCityLoggerCrudExtension;
-use AcademCity\LoggerCrudBundle\DependencyInjection\Compiler\MonologExtensionCompilerPass;
+use Slcorp\LoggerCrudBundle\DependencyInjection\SlcorpLoggerCrudExtension;
+use Slcorp\LoggerCrudBundle\DependencyInjection\Compiler\MonologExtensionCompilerPass;
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AcademCityLoggerCrudBundle extends Bundle
+class SlcorpLoggerCrudBundle extends Bundle
 {
     public function build(ContainerBuilder $container): void
     {
@@ -25,7 +25,7 @@ class AcademCityLoggerCrudBundle extends Bundle
 
     public function getContainerExtension(): ?ExtensionInterface
     {
-        return new AcademCityLoggerCrudExtension();
+        return new SlcorpLoggerCrudExtension();
     }
 
 }

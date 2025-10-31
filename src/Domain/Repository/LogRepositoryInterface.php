@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace AcademCity\LoggerCrudBundle\Domain\Repository;
+namespace Slcorp\LoggerCrudBundle\Domain\Repository;
 
-use AcademCity\LoggerCrudBundle\Domain\Entity\Log;
+use Slcorp\LoggerCrudBundle\Domain\Entity\Log;
 
 interface LogRepositoryInterface
 {

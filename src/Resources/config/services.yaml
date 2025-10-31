@@ -3,32 +3,32 @@ services:
     autowire: true
     autoconfigure: true
 
-  AcademCity\LoggerCrudBundle\:
+  Slcorp\LoggerCrudBundle\:
     resource: '../../*'
     exclude: '../../{DependencyInjection,Entity,Migrations,Tests,Kernel.php,Resources/config/packages/doctrine/logger_crud_bundle.php}'
 
   monolog.logger_crud_bundle_handler:
-    class: AcademCity\LoggerCrudBundle\Application\Service\MonologDBHandler
+    class: Slcorp\LoggerCrudBundle\Application\Service\MonologDBHandler
     #    arguments: [ '@doctrine.orm.entity_manager',  '@security.helper' ]
 
   monolog.processor.request:
-    class: AcademCity\LoggerCrudBundle\Application\Service\RequestProcessor
+    class: Slcorp\LoggerCrudBundle\Application\Service\RequestProcessor
     arguments: [ '@request_stack', '@service_container' ]
     tags:
       - { name: monolog.processor, method: processRecord, handler: logger_crud_bundle }
 
   monolog.db_log_saver:
-    class: AcademCity\LoggerCrudBundle\Infrastructure\EventSubscriber\LogSaveSubscriber
+    class: Slcorp\LoggerCrudBundle\Infrastructure\EventSubscriber\LogSaveSubscriber
     arguments: [ '@monolog.logger_crud_bundle_handler' ]
     tags:
       - { name: kernel.event_subscriber }
 
   app.subscriber.abstract_subscriber:
-    class: AcademCity\LoggerCrudBundle\Infrastructure\EventSubscriber\AbstractLoggerSubscriber
+    class: Slcorp\LoggerCrudBundle\Infrastructure\EventSubscriber\AbstractLoggerSubscriber
     arguments: [ '@logger', '@security.helper', '@parameter_bag' ]
 
   app.subscriber.entity_subscriber:
-    class: AcademCity\LoggerCrudBundle\Infrastructure\EventSubscriber\EntityActionSubscriber
+    class: Slcorp\LoggerCrudBundle\Infrastructure\EventSubscriber\EntityActionSubscriber
     parent: app.subscriber.abstract_subscriber
     tags:
       #  TODO разобраться почему не работает так, потратил много времени, не понял почему, в ЛК автора работает именно так

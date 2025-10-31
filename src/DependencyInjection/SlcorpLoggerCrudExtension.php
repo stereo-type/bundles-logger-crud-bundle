@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace AcademCity\LoggerCrudBundle\DependencyInjection;
+namespace Slcorp\LoggerCrudBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -14,7 +14,7 @@ use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\Filesystem\Filesystem;
 
-class AcademCityLoggerCrudExtension extends Extension
+class SlcorpLoggerCrudExtension extends Extension
 {
     private const PERMISSIONS_MASK = 0755;
     private string $projectRoot;
