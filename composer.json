@@ -1,6 +1,6 @@
 {
   "name": "slcorp/logger-crud-bundle",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "type": "symfony-bundle",
   "minimum-stability": "stable",
   "stability": "stable",

@@ -33,7 +33,7 @@ class EntityActionSubscriber extends AbstractLoggerSubscriber implements EventSu
     public function __construct(LoggerInterface $dbLogger, Security $security, ParameterBagInterface $params)
     {
         parent::__construct($dbLogger, $security, $params);
-        $this->ignoreEntities = array_merge(self::EXCLUDED_ENTITY, $params->get('academ_city_logger_crud.ignore_entities'));
+        $this->ignoreEntities = array_merge(self::EXCLUDED_ENTITY, $params->get('slcorp_logger_crud.ignore_entities'));
     }
 
     /**
